@@ -4,7 +4,7 @@ dist: trelby/names.txt.gz trelby/dict_en.dat.gz trelby/manual.html trelby/trelby
 	cp trelby/trelby.1.gz doc/
 
 dmg:
-	./build_dmg.sh
+	./build_dmg.sh $(VERSION)
 
 trelby/names.txt.gz: trelby/names.txt
 	gzip -c trelby/names.txt > trelby/names.txt.gz

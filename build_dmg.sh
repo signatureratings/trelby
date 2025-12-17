@@ -2,7 +2,7 @@
 set -euo pipefail
 
 APP_NAME="Trelby"
-VERSION="2.4.16.2"
+VERSION="${1:-2.4.16.2}"
 DIST_DIR="dist"
 DMG_NAME="${APP_NAME}-${VERSION}.dmg"
 
@@ -13,6 +13,7 @@ echo " Cleaning old builds..."
 rm -rf build "${DIST_DIR}"
 
 # Build app bundle
+make dist
 echo "Building .app with py2app..."
 python3 setup.py py2app
 
